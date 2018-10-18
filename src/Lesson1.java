@@ -26,5 +26,23 @@ public class Lesson1 {
         int squareRidge = lengthRidge * widthRidge;
         int freeSquare = squareGarden - squareRidge;
         System.out.println("Осталось не занято " + freeSquare + " m2");
+/*      Задача 3:
+        Найдите площадь овального кольца,
+        полученного из овала площадью 15 дм2 вырезанием овала площадью 600 см2.*/
+        int oval1 = 15;
+        int oval2 = 6;
+        int ringOval = oval1 - oval2;
+        System.out.println(ringOval);
+/*
+        Задача 4:
+        Вывести в консоль ближайшее к 10 из двух чисел, записанных в переменные m и n.
+        Например, среди чисел 8.5 и 11.45 ближайшее к десяти 11.45.
+        Метод Math.abs(n) возвращает абсолютное значение числа (модуль числа).
+*/
+        double a = 8.5;
+        double b = 11.45;
+        int c = 10;
+        System.out.println();
+
     }
 }
