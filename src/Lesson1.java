@@ -39,10 +39,11 @@ public class Lesson1 {
         Например, среди чисел 8.5 и 11.45 ближайшее к десяти 11.45.
         Метод Math.abs(n) возвращает абсолютное значение числа (модуль числа).
 */
-        double a = 8.5;
-        double b = 11.45;
-        int c = 10;
-        System.out.println();
+        double a = -2.5;
+        double b = 23.45;
+        int c = 15;
 
+        double nearestNum = ((Math.abs(c-a)) < (Math.abs(c-b))) ? a : b;
+        System.out.println(nearestNum);
     }
 }
