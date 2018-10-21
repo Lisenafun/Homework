@@ -44,15 +44,6 @@ public class Lesson2 {
         Трамвайное депо решило подарить сувенир обладателю каждого счастливого билета и теперь раздумывает, как много сувениров потребуется.
         С помощью программы подсчитайте сколько счастливых билетов в одном рулоне?
 */
-//        int sumFirst = (a - (a % 1000)) / 1000;
-//        int sumSecond = a % 1000;
-//        int firstNum = (sumFirst - (sumFirst % 100)) / 100;
-//        int secondNum = ((sumFirst - (sumFirst % 10)) / 10) % 10;
-//        int thirdNum = (int) (sumFirst - (((sumFirst - (sumFirst % 10)) / 10) / 0.1));
-//        int fourNum = (sumSecond - (sumSecond % 100)) / 100;
-//        int fiveNum = ((sumSecond - (sumSecond % 10)) / 10) % 10;
-//        int sixNum = (int) (sumSecond - (((sumSecond - (sumSecond % 10)) / 10) / 0.1));
-
         System.out.println("Задача 3");
         int sumLucky = 0;
         for (int d = 999999; d >= 1; d--) {
@@ -69,6 +60,59 @@ public class Lesson2 {
 //                    System.out.println(d + "," + sumLucky);
                 }
         }
-        System.out.println("Сумма счастливых билетов равна = " + sumLucky);
+        System.out.println("Количество счастливых билетов = " + sumLucky);
+/*      Задача 7*
+        Электронные часы показывают время в формате от 00:00 до 23:59.
+        Подсчитать сколько раз за сутки случается так,
+        что слева от двоеточия показывается симметричная комбинация для той,
+        что справа от двоеточия (например, 02:20, 11:11 или 15:51).
+*/
+        System.out.println("Задача 4");
+        int luckyTime = 0;
+        for (int h = 0; h <= 23; h++) {
+            int firstHour = (h - h % 10) / 10;
+            int secHour = h % 10;
+            for (int m = 0; m <= 59; m++) {
+                int firstMin = (m - m % 10) / 10;
+                int secMin = m % 10;
+                if (firstHour == secMin & secHour == firstMin) {
+                    luckyTime++;
+//                    System.out.println(firstHour + " " + secHour + " : " + firstMin + " " + secMin);
+                }
+            }
+        }
+        System.out.println("Симметричная комбинация покажется за сутки = " + luckyTime + " раз");
+/*      Задача 8*
+        Есть три вершины X, Y, Z.
+        Их координаты (x1, x2), (y1, y2), (z1, z2) заданы как целые числа.
+        Нужно определить - является ли треугольник с заданными координатами прямоугольным.
+*/
+        System.out.println("Задача 5");
+        int d = 3, d1 = 4, e = 3, e1 = 4, f = 1, f1 = 3;
+        if (d == f & f1 == e1 | d == e & d1 == f1 | d == e & e1 == f1){
+            System.out.println("Треугольник является прямоугольным");
+//        } else if (d1 == e1 == f1 | d == e == f){
+//            System.out.println("Это не треугольник, а линия");
+        } else {
+            System.out.println("Треугольник не является прямоугольным");
+        }
+/*
+        Задача 9*
+        Задать количество тарелок и количество моющего средства.
+        Моющее средство расходуется из расчета 0,5 на одну тарелку.
+        В цикле выводить сколько моющего средства осталось после мытья каждой тарелки
+        В конце вывести, сколько тарелок осталось, когда моющее средство закончилось или наоборот.
+*/
+        System.out.println("Задача 6");
+        double aosNum = 10;
+        for (int plateNum = 5; plateNum >= 0 ; plateNum--) {
+            if (aosNum > 0) {
+                aosNum -= 0.5;
+            } else if (aosNum == 0 & plateNum > 0) {
+                System.out.println("Осталось не помыто тарелок = " + plateNum);
+            } else if (plateNum == 0) {
+            }
+        }
+        System.out.println("Моющего средства осталось = " + aosNum);
     }
 }
