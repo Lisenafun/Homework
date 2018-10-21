@@ -8,6 +8,7 @@ public class Lesson2 {
         чтобы при выводе на экран последовательность a, b и c оказалась строго возрастающей.
         Числа в переменных a, b и c: 3, 9, -1
         Возрастающая последовательность: -1, 3, 9*/
+        System.out.println("Задача 1");
         int a = 15;
         int b = -3;
         int c = 6;
@@ -28,6 +29,7 @@ public class Lesson2 {
         Создайте программу,
         выводящую на экран первые 20 элементов последовательности 2 4 8 16 32 64 128 ….
 */
+        System.out.println("Задача 2");
         int i=2;
         for (int j = 0; j < 20; j++){
            System.out.println(i);
@@ -42,10 +44,31 @@ public class Lesson2 {
         Трамвайное депо решило подарить сувенир обладателю каждого счастливого билета и теперь раздумывает, как много сувениров потребуется.
         С помощью программы подсчитайте сколько счастливых билетов в одном рулоне?
 */
-//        for (int j = 1; j < 999999; j++) {
-//            System.out.println(j);
-//        }
-        a=999999;
-        System.out.println((a-(a%100000))/100000);
+//        int sumFirst = (a - (a % 1000)) / 1000;
+//        int sumSecond = a % 1000;
+//        int firstNum = (sumFirst - (sumFirst % 100)) / 100;
+//        int secondNum = ((sumFirst - (sumFirst % 10)) / 10) % 10;
+//        int thirdNum = (int) (sumFirst - (((sumFirst - (sumFirst % 10)) / 10) / 0.1));
+//        int fourNum = (sumSecond - (sumSecond % 100)) / 100;
+//        int fiveNum = ((sumSecond - (sumSecond % 10)) / 10) % 10;
+//        int sixNum = (int) (sumSecond - (((sumSecond - (sumSecond % 10)) / 10) / 0.1));
+
+        System.out.println("Задача 3");
+        int sumLucky = 0;
+        for (int d = 999999; d >= 1; d--) {
+            int sumFirst = (d - (d % 1000)) / 1000;
+            int sumSecond = d % 1000;
+            int firstNum = (sumFirst - (sumFirst % 100)) / 100;
+            int secondNum = ((sumFirst - (sumFirst % 10)) / 10) % 10;
+            int thirdNum = (int) (sumFirst - (((sumFirst - (sumFirst % 10)) / 10) / 0.1));
+            int fourNum = (sumSecond - (sumSecond % 100)) / 100;
+            int fiveNum = ((sumSecond - (sumSecond % 10)) / 10) % 10;
+            int sixNum = (int) (sumSecond - (((sumSecond - (sumSecond % 10)) / 10) / 0.1));
+                if (firstNum + secondNum + thirdNum == fourNum + fiveNum + sixNum){
+                    sumLucky++;
+//                    System.out.println(d + "," + sumLucky);
+                }
+        }
+        System.out.println("Сумма счастливых билетов равна = " + sumLucky);
     }
 }
