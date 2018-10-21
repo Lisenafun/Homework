@@ -26,6 +26,9 @@ public class Lesson1 {
         int squareRidge = lengthRidge * widthRidge;
         int freeSquare = squareGarden - squareRidge;
         System.out.println("Осталось не занято " + freeSquare + " m2");
+        //верное решение
+        int freeSquare2 = squareGarden % (lengthRidge*widthRidge);
+        System.out.println("Осталось не занято " + freeSquare2);
 /*      Задача 3:
         Найдите площадь овального кольца,
         полученного из овала площадью 15 дм2 вырезанием овала площадью 600 см2.*/
@@ -45,5 +48,21 @@ public class Lesson1 {
 
         double nearestNum = ((Math.abs(c-a)) < (Math.abs(c-b))) ? a : b;
         System.out.println(nearestNum);
+
+/*      Задача 5:
+        Задать размер ипотечного кредита , процентную ставку , кол-во лет .
+        Найти переплату по кредиту, значение переплаты вывести в консоль.
+*/
+        int credit = 1000000;
+        int stavka = 9;
+        int year = 3;
+        int pereplata = (credit*9/100)*3;
+        System.out.println("Переплата по кредиту составит " + pereplata);
+
+/*        Задача 7:
+        Создать программу, выводящую в консоль наибольшую цифру любого трехзначного натурального числа. Примеры работы программы:
+        В числе 208 наибольшая цифра 8
+        В числе 774 наибольшая цифра 7
+        В числе 613 наибольшая цифра 6*/
     }
 }
