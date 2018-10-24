@@ -1,7 +1,6 @@
 package lesson3;
 
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.Scanner;
 
 public class Lesson3 {
@@ -50,8 +49,9 @@ public class Lesson3 {
         }
         System.out.println(" ");
         for(int i=arr2.length-1;i>=0;i--){
-            System.out.println(arr2[i]);
+            System.out.print(arr2[i] + " ");
         }
+        System.out.println(" ");
 /*        Задача 4*
     Пользователь должен указать с клавиатуры чётное положительное число,
     а программа должна создать массив указанного размера из случайных целых чисел из [-5;5]
@@ -88,9 +88,7 @@ public class Lesson3 {
                 System.out.println(Arrays.toString(arr5) + Arrays.toString(arr6));
                 int sum1;
                 for (int j = 0; j < num2; j++) {
-                    int m = j+1;
-                    sum1 = Math.abs(arr5[j] + arr5[m]);
-                    System.out.println(sum1);
+//                    int sum1 += Math.abs(arr5[j]);
                 }
             }
         }
