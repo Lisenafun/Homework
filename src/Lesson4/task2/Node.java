@@ -35,8 +35,12 @@ public class Node {
             this.element = e;
         }else {
             if(next == null) {
-            next = new Node(e,null);
-        }
+            next = new Node(e,next= new Node());
+            setNext(next);
+            }
+            else{
+                setNext(next = new Node(e,null));
+            }
         }
 
     }
