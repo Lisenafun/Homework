@@ -26,23 +26,16 @@ public class Node {
         this.element = element;
     }
 
-    public void setNext(Node next) {
-        this.next = next;
-    }
-
-    public void add(int e) {
+     public void add(int e) {
         if (element == 0) {
             this.element = e;
-        }else {
-            if(next == null) {
-            next = new Node(e,next= new Node());
-            setNext(next);
-            }
-            else{
-                setNext(next = new Node(e,null));
+        } else {
+            if (this.next == null) {
+                this.next = new Node(e);
+            } else {
+                this.next.add(e);
             }
         }
-
     }
     public void removeElement(){
         element = 0;
