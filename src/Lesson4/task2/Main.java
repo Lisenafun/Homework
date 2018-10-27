@@ -4,16 +4,14 @@ public class Main {
     public static void main(String[] args) {
         Node list = new Node();
         Node list2 = new Node();
+        list.add(11);
         System.out.println(list.toString());
-        list.addElement(15);
-        list.addNext(list2);
+        list.add(13);
         System.out.println(list.toString());
-        list2.addElement(10);
+//        list.setNext(list2);
+        list.add(15);
         System.out.println(list.toString());
-        list2.removeElement();
-        System.out.println(list.toString());
-        list.removeLast();
-        System.out.println(list.toString());
+
 
     }
 }
