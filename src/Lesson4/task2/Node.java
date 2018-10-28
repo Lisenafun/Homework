@@ -14,6 +14,10 @@ public class Node {
         this.element = element;
         this.next = null;
     }
+    public Node(Node next) {
+        this.element = 0;
+        this.next = next;
+    }
 
     public int getElement(){
         return element;
@@ -37,11 +41,16 @@ public class Node {
             }
         }
     }
-    public void removeElement(){
-        element = 0;
-    }
-    public void removeLast(){
-        next = null;
+    public void remove(int value){
+        for (int i = 0; i < 1; i++) {
+            if (this.element == value) {
+                this.element = this.next.getElement();
+                this.next = this.next.getNext();
+                break;
+            } else if(this.element != value){
+//                this.next.getElement() = value
+            }i--;
+        }
     }
 
     @Override
