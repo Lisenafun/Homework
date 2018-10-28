@@ -7,14 +7,13 @@ public class Main {
         System.out.println(list.toString());
         list.add(13);
         System.out.println(list.toString());
-//        list.setNext(list2);
         list.add(15);
         System.out.println(list.toString());
         list.add(17);
         System.out.println(list.toString());
         list.add(19);
         System.out.println(list.toString());
-        list.remove(13);
+        list.remove(15);
         System.out.println(list.toString());
 
 

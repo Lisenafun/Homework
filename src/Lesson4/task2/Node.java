@@ -1,5 +1,7 @@
 package Lesson4.task2;
 
+import java.util.Iterator;
+
 public class Node {
     private int element;
     private Node next;
@@ -29,6 +31,9 @@ public class Node {
     public void setElement(int element) {
         this.element = element;
     }
+    public void setNext(Node next) {
+        this.next = next;
+    }
 
      public void add(int e) {
         if (element == 0) {
@@ -41,16 +46,15 @@ public class Node {
             }
         }
     }
-    public void remove(int value){
-        for (int i = 0; i < 1; i++) {
-            if (this.element == value) {
+    public void remove(int e){
+            if (this.element == e) {
                 this.element = this.next.getElement();
                 this.next = this.next.getNext();
-                break;
-            } else if(this.element != value){
-//                this.next.getElement() = value
-            }i--;
-        }
+            } else if(this.next.getElement() == e){
+                this.next= this.next.getNext();
+        } else {
+                this.next.remove(e);
+            }
     }
 
     @Override
