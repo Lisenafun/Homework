@@ -2,12 +2,14 @@ package lesson6.linkedList;
 
 public class LinkedList implements List, Queue, Stack{
     private Object first;
-    private Object next;
     private Object last;
+    private int size;
+    private int index;
 
     public LinkedList() {
         this.first = null;
         this.last = null;
+
     }
 
     public LinkedList(Object first) {
@@ -27,20 +29,20 @@ public class LinkedList implements List, Queue, Stack{
         this.first = first;
     }
 
-    public Object getNext() {
-        return next;
-    }
-
-    public void setNext(Object next) {
-        this.next = next;
-    }
-
     public Object getLast() {
         return last;
     }
 
     public void setLast(Object last) {
         this.last = last;
+    }
+
+    public int getIndex() {
+        return index;
+    }
+
+    public void setIndex(int index) {
+        this.index = index;
     }
 
     @Override
@@ -60,7 +62,7 @@ public class LinkedList implements List, Queue, Stack{
 
     @Override
     public int size() {
-        return 0;
+        return this.size = size;
     }
 
     @Override
@@ -75,13 +77,14 @@ public class LinkedList implements List, Queue, Stack{
 
     @Override
     public void push(Object obj) {
-        if(this.first == null){
+        if (this.first == null) {
             this.first = obj;
-        } else if (this.last == null){
-            this.last = new LinkedList(obj);
-        } else if (this.first != null & this.last !=null){
-            this.last = this.getLast();
+        } else {
+            if (this.last == null) {
+                this.last = new LinkedList(obj);
+            } else {
 
+            }
         }
     }
 
