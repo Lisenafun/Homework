@@ -118,7 +118,7 @@ public class Lesson3 {
         String copyString = inString.nextLine();
         String stringNew = string1.replaceAll(delString,copyString);
         System.out.println("Итого:" + stringNew);
-        stringNew.replaceAll("[^a-z]+","*");
+        stringNew.replaceAll("[a-z]+","*");
         System.out.println("Убираем повторяющиеся символы:" + stringNew);
         System.out.println("Убираем пробелы:" + stringNew.replaceAll("\\s", ""));
 
