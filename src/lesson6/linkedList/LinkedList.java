@@ -1,90 +1,34 @@
 package lesson6.linkedList;
 
-public class LinkedList implements List, Queue, Stack{
-    private Object first;
-    private Object last;
+public class LinkedList<E>
+        implements Stack{
+
+    private ListElement first;
+    private ListElement last;
+    private static int index;
     private int size;
-    private int index;
 
     public LinkedList() {
-        this.first = null;
-        this.last = null;
-
     }
 
-    public LinkedList(Object first) {
-        this.first = first;
-        this.last = null;
-    }
-    public LinkedList(Object first, Object last) {
+    public LinkedList(ListElement first, ListElement last) {
         this.first = first;
         this.last = last;
     }
-
-    public Object getFirst() {
-        return first;
+    public class ListElement<E>{
+        ListElement next;
+        E object;
     }
-
-    public void setFirst(Object first) {
-        this.first = first;
-    }
-
-    public Object getLast() {
-        return last;
-    }
-
-    public void setLast(Object last) {
-        this.last = last;
-    }
-
-    public int getIndex() {
-        return index;
-    }
-
-    public void setIndex(int index) {
-        this.index = index;
-    }
-
     @Override
-    public void add(Object obj, int index) {
-
-    }
-
-    @Override
-    public void remove(int index) {
-
-    }
-
-    @Override
-    public Object get(int index) {
-        return null;
-    }
-
-    @Override
-    public int size() {
-        return this.size = size;
-    }
-
-    @Override
-    public void shift(Object obj) {
-
-    }
-
-    @Override
-    public void unshift() {
-
-    }
-
-    @Override
-    public void push(Object obj) {
-        if (this.first == null) {
-            this.first = obj;
+    public void push (Object obj) {
+        ListElement a = new ListElement();
+        a.object = obj;
+        if (last == null) {
+            first = a;
+            last = a;
         } else {
-            if (this.last == null) {
-                this.last = new LinkedList(obj);
-            } else {
-
-            }
+            last.next = a;
+            last = a;
         }
     }
 
@@ -92,13 +36,17 @@ public class LinkedList implements List, Queue, Stack{
     public void pop() {
 
     }
-
-    @Override
-    public String toString() {
-        return "LinkedList{" +
-                "first='" + first + '\'' +
-//                ", next='" + next + '\'' +
-                ", last='" + last + '\'' +
-                '}';
+    public void print (){
+        ListElement t = first;
+        System.out.print ("{ ");
+        if (t == null) {
+            System.out.println (t + " ");
+        } else {
+            while (t != null) {
+                System.out.print (t.object + " ");
+                t = t.next;
+            }
+        }
+        System.out.print ("}" + "\n");
     }
 }

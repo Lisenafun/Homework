@@ -1,6 +1,6 @@
 package lesson6.linkedList;
 
-public interface Stack {
-    public void push(Object obj);
+public interface Stack<E> {
+    public void push(E obj);
     public void pop();
 }

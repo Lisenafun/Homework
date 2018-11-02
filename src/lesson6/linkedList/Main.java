@@ -1,15 +1,18 @@
 package lesson6.linkedList;
 
+import java.util.Arrays;
+
 public class Main {
     public static void main(String[] args) {
         LinkedList list = new LinkedList();
+//        list.print ();
         list.push("Привет");
-        System.out.println(list.toString());
+        list.print ();
         list.push(15);
-        System.out.println(list.toString());
+        list.print ();
         list.push(23);
-        System.out.println(list.toString());
-//        list.push("Hello");
-//        System.out.println(list.toString());
+        list.print ();
+        list.push("Hello");
+        list.print ();
     }
 }

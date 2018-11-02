@@ -1,6 +1,6 @@
 package lesson6.linkedList;
 
-public interface Queue {
-    void shift(Object obj);
+public interface Queue<E> {
+    void shift(E obj);
     void unshift();
 }
