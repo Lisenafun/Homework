@@ -10,9 +10,14 @@ public class Main {
         list.print ();
         list.push(15);
         list.print ();
-        list.push(23);
-        list.print ();
-        list.push("Hello");
-        list.print ();
+//        list.push(23);
+//        list.print ();
+//        list.shift("Hello");
+//        list.print ();
+        System.out.println (list.toString ());
+        System.out.println (list.get (3));
+
+
+
     }
 }
