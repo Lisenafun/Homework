@@ -1,11 +1,13 @@
 package lesson6.linkedList;
 
+import java.util.Arrays;
+
 public class LinkedList<E>
         implements Stack, Queue, List{
 
     private ListElement first;
     private ListElement last;
-    private int size;
+    static int size = 0;
 
     public LinkedList() {
     }
@@ -18,7 +20,9 @@ public class LinkedList<E>
     public class ListElement<E>{
         E object;
         ListElement next;
+
         int index;
+
 
         public int getIndex() {
             return index;
@@ -31,7 +35,7 @@ public class LinkedList<E>
         @Override
         public String toString() {
             return "ListElement{" +
-                    "object=" + object +
+                    " object=" + object +
                     ", next=" + next +
                     '}';
         }
@@ -48,6 +52,7 @@ public class LinkedList<E>
             last.next = a;
             last = a;
         }
+        size++;
     }
 
     @Override
@@ -65,6 +70,7 @@ public class LinkedList<E>
             last = a;
             a.next = a.next.next;
         }
+        size--;
     }
 
     @Override
@@ -78,6 +84,7 @@ public class LinkedList<E>
             a.next = first;
             first = a;
         }
+        size++;
     }
 
     @Override
@@ -94,16 +101,61 @@ public class LinkedList<E>
             first.object = first.next.object;
             first = first.next;
         }
+        size--;
     }
 
     @Override
     public void add(Object obj, int index) {
-
+        if (index < 0 || index > size) {
+            System.out.println ("Такого индекса не существует, проверьте размер списка");
+        }
+        if (index == size) {
+            push (obj);
+            return;
+        }
+      ListElement t = first;
+        int lengthO = size;
+        Object [] objects = new Object[lengthO+1];
+        for (int i = 0; i < objects.length; i++) {
+            objects[i] = t.object;
+            if(i == index){
+                objects[i++] = obj;
+                objects[i] = t.object;
+            }
+            t = t.next;
+            size--;
+        }
+            this.first = null;
+            this.last = null;
+//        System.out.println (Arrays.toString (objects));
+        for (int i = 0; i < objects.length; i++) {
+            this.push (objects[i]);
+        }
     }
 
     @Override
     public void remove(int index) {
-
+        if (index < 0 || index > size-1) {
+            System.out.println ("Такого индекса не существует, проверьте размер списка");
+            return;
+        }
+        if(index == 0){
+            unshift ();
+            return;
+        }
+        if(index == size-1){
+            pop ();
+            return;
+        }
+        ListElement t = first;
+        for (int i = 1; i < size-1; i++) {
+            t = t.next;
+            if (i == index) {
+                t.object = t.next.object;
+                t.next = t.next.next;
+            }
+        }
+        size--;
     }
 
     @Override
@@ -112,8 +164,8 @@ public class LinkedList<E>
             return null;
         }
         ListElement a = first;
-        a.index = 1;
-        for (int i = 1; i < index; i++) {
+        a.index = 0;
+        for (int i = 0; i < index; i++) {
             a = a.next;
             if(a == null){
                 return null;
@@ -125,7 +177,7 @@ public class LinkedList<E>
 
     @Override
     public int size() {
-        return 0;
+        return size;
     }
 
     public void print (){
