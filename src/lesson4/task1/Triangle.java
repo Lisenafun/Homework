@@ -1,6 +1,4 @@
-package Lesson4.task1;
-
-import java.util.Scanner;
+package lesson4.task1;
 
 public class Triangle {
     private Point point1 = new Point();

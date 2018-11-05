@@ -1,4 +1,4 @@
-package Lesson4.task3;
+package lesson4.task3;
 
 public class Book {
     private String name;

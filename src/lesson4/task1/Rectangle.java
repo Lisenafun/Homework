@@ -1,4 +1,4 @@
-package Lesson4.task1;
+package lesson4.task1;
 
 public class Rectangle {
     private Point point1 = new Point();

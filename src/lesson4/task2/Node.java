@@ -1,6 +1,4 @@
-package Lesson4.task2;
-
-import java.util.Iterator;
+package lesson4.task2;
 
 public class Node {
     private int element;
