@@ -14,6 +14,10 @@ public class Main {
         System.out.println(library.toString());
         System.out.println (library.get (book1,4));
         System.out.println(library.toString());
+        library.put (book3, 1);
+        System.out.println (library.toString ());
+        System.out.println (library.get (book3,3));
+        System.out.println (library.toString ());
 
     }
 }

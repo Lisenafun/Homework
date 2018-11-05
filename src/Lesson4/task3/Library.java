@@ -33,15 +33,17 @@ public class Library {
 
     public int get(Book book,int quantity){
         for (int i = 0; i < quantity; i++) {
+            if(i>=library.length){
+                int notFound = quantity - library.length;
+                System.out.println ("В библиотеке не хватает " + notFound + " книг");
+                break;
+            }
             if(library[i] == book){
                 library[i] = null;
                 size++;
             }else if(library[i] != book){
                 quantity++;
                 }
-            if(i>library.length){
-                System.out.println ("Указанных книг больше в библиотеке нет");
-            }
         }
         return size;
     }
@@ -49,6 +51,6 @@ public class Library {
     @Override
     public String toString() {
         return "Library{" + Arrays.toString(library) +
-                '}';
+                '}'+ " ";
     }
 }
