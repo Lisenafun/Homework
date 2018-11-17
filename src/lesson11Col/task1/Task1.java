@@ -1,4 +1,4 @@
-package lesson11Col;
+package lesson11Col.task1;
 
 import java.util.*;
 

@@ -1,4 +1,4 @@
-package lesson11Col;
+package lesson11Col.task2;
 
 import java.util.ArrayList;
 import java.util.Scanner;
