@@ -121,6 +121,24 @@ public class TxtReader {
         }
         return treeSet;
     }
+    public int countVirgule(){
+        int countVirgule = 0;
+        try(RandomAccessFile fileR = new RandomAccessFile (file, "r")){
+            fileR.seek (0);
+            byte[] bytes = new byte[(int)file.length ()];
+            fileR.read(bytes);
+            String str = new String(bytes, "UTF-8");
+            char [] myChar = str.toCharArray ();
+            for (int i = 0; i < bytes.length; i++) {
+                if(myChar[i] == ','){
+                    countVirgule++;
+                }
+            }
+        }catch (IOException e){
+            e.printStackTrace ();
+        }
+        return countVirgule;
+    }
 }
 
 
