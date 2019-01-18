@@ -1,11 +1,14 @@
 package lesson18.alarmObserver;
 
-import java.util.ArrayList;
-import java.util.List;
+import lesson19.task1.Exclude;
+
+import java.util.Arrays;
 
 public class Sensor {//класс со слушателями
     private Alarm[] alarms = {new GreenAlarm (),new YellowAlarm (),new RedAlarm ()};
     private int temperature = 0;
+    @Exclude
+    private String name;
 
     public int getTemperature() {
         return temperature;
@@ -26,5 +29,10 @@ public class Sensor {//класс со слушателями
         for(Alarm alarm: alarms){
             alarm.tempChanged (temp);
         }
+    }
+
+    @Override
+    public String toString() {
+        return "Sensor{" + "alarms=" + Arrays.toString (alarms) + ", temperature=" + temperature + '}';
     }
 }
